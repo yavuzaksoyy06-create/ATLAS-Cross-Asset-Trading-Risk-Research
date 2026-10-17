@@ -71,6 +71,10 @@ Multiple comparisons, regime drift, hindsight selection and already-reviewed out
 - Re-run commands: install dependencies using **python -m pip install -e '.[all]'**, then execute **python -m atlas.real_study --output results/real_market --repetitions 500**.
 - Full Markdown research memo, HTML dashboard, performance, stress, cost, VaR and bootstrap reports are available as an [Actions artifact](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600) for the retention period.
 
+### Persistent summary tables
+
+Small aggregate tables are committed so the core findings remain reviewable after the GitHub Actions artifact expires: [performance](verified_performance_summary.csv) · [2020/2022 stress](verified_stress_summary.csv) · [99% VaR exceptions](verified_var_exceedances.csv) · [reference reconciliation](reference_reconciliation.json). These rounded review tables are extracted from the full archived audit; rerun the workflow for complete model and cost diagnostics.
+
 ### What this does *not* establish
 
 No licensed-vendor total-return reconciliation; no actual bid/ask fills or order books; no financing, cash yield or taxes; no historical point-in-time ETF universe; no truly untouched confirmatory holdout, paper trading or live execution. SPY and QQQ overlap economically. Results from synthetic engineering fixtures are separated from this pinned historical-price analysis.
