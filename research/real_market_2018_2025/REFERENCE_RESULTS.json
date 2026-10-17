@@ -1,0 +1,133 @@
+{
+  "status": "Historical archived data analysis conducted through authenticated GitHub file retrieval and independent JS reference evaluator; local Python live download not exercised in network-restricted build sandbox.",
+  "prices_are_synthetic": false,
+  "source": "https://github.com/revred/TradeSmart.Tracker",
+  "source_claim": "The archive README says adjusted OHLCV from Stooq/Yahoo, but this has not been independently validated.",
+  "git_commit": "7d9d769b0f2ddcedf4c1703cc979b865a37b580d",
+  "git_blobs": {
+    "SPY": "38acc25a077e23fdf107102960c3df32f1543a7d",
+    "QQQ": "410dc48d874ab666b6e22f529f395c0d9ca70060",
+    "TLT": "24c628146c0d393589cc3aba3b290156a7703639"
+  },
+  "universe": [
+    "SPY",
+    "QQQ",
+    "TLT"
+  ],
+  "market_data_interval": [
+    "2018-01-02",
+    "2025-12-31"
+  ],
+  "common_price_observations": 2011,
+  "return_observations": 2010,
+  "comparison_interval": [
+    "2023-01-03",
+    "2025-12-31"
+  ],
+  "comparison_sessions": 752,
+  "backtest_protocol": {
+    "rebalance_every_sessions": 21,
+    "trading_cost_bps_per_abs_weight_turnover": 8,
+    "commission_assumption_bps": 3,
+    "slippage_assumption_bps": 5,
+    "benchmark_has_trading_costs": false,
+    "risk_free_assumption": "0% Sharpe, not excess of cash",
+    "first_session_initial_allocation_charged": true,
+    "in_sample_selection": "Rules were fixed; evaluation period was examined post-hoc, so not a pristine heldout study."
+  },
+  "results": {
+    "SPY_benchmark_no_cost": {
+      "label": "SPY — zero-cost benchmark",
+      "2018_2025": {
+        "sessions": 2010,
+        "cumulative_return_pct": 187.4773996655,
+        "annualized_return_pct": 14.15543262445,
+        "annualized_volatility_pct": 19.45951992976,
+        "sharpe_zero_risk_free_rate": 0.77805901581,
+        "max_drawdown_pct": -33.7172576359,
+        "historical_var_95_daily_loss_pct": 1.79891690022,
+        "historical_es_95_daily_loss_pct": 2.97225937003
+      },
+      "2023_2025_chronological_segment": {
+        "sessions": 752,
+        "cumulative_return_pct": 85.4975533917,
+        "annualized_return_pct": 23.0047376053,
+        "annualized_volatility_pct": 15.34328904145,
+        "sharpe_zero_risk_free_rate": 1.4262032636,
+        "max_drawdown_pct": -18.755237673,
+        "historical_var_95_daily_loss_pct": 1.4161046246,
+        "historical_es_95_daily_loss_pct": 2.1102874264
+      }
+    },
+    "60_40": {
+      "label": "60% SPY / 40% TLT",
+      "2018_2025": {
+        "sessions": 2010,
+        "cumulative_return_pct": 86.674196545,
+        "annualized_return_pct": 8.140080169,
+        "annualized_volatility_pct": 12.238266744,
+        "sharpe_zero_risk_free_rate": 0.700790256,
+        "max_drawdown_pct": -27.62340794,
+        "historical_var_95_daily_loss_pct": 1.192601712,
+        "historical_es_95_daily_loss_pct": 1.8172856957
+      },
+      "2023_2025_chronological_segment": {
+        "sessions": 752,
+        "cumulative_return_pct": 45.2544941136,
+        "annualized_return_pct": 13.3262861255,
+        "annualized_volatility_pct": 11.404831444,
+        "sharpe_zero_risk_free_rate": 1.1540021545,
+        "max_drawdown_pct": -12.7041884865,
+        "historical_var_95_daily_loss_pct": 1.09238290497,
+        "historical_es_95_daily_loss_pct": 1.5654401424
+      }
+    },
+    "equal_3": {
+      "label": "SPY / QQQ / TLT equally weighted",
+      "2018_2025": {
+        "sessions": 2010,
+        "cumulative_return_pct": 128.8200927846,
+        "annualized_return_pct": 10.9355930184,
+        "annualized_volatility_pct": 14.4159005301,
+        "sharpe_zero_risk_free_rate": 0.792152178,
+        "max_drawdown_pct": -30.468818059,
+        "historical_var_95_daily_loss_pct": 1.43547383,
+        "historical_es_95_daily_loss_pct": 2.140560077
+      },
+      "2023_2025_chronological_segment": {
+        "sessions": 752,
+        "cumulative_return_pct": 64.6059062132,
+        "annualized_return_pct": 18.1768037737,
+        "annualized_volatility_pct": 12.9769366353,
+        "sharpe_zero_risk_free_rate": 1.35200327835,
+        "max_drawdown_pct": -14.539379174,
+        "historical_var_95_daily_loss_pct": 1.2523655895,
+        "historical_es_95_daily_loss_pct": 1.7643845145
+      }
+    },
+    "inverse_vol_63": {
+      "label": "Inverse-volatility 63 sessions",
+      "2018_2025": {
+        "sessions": 2010,
+        "cumulative_return_pct": 106.4401056802,
+        "annualized_return_pct": 9.5132631006,
+        "annualized_volatility_pct": 13.079623999,
+        "sharpe_zero_risk_free_rate": 0.760326954,
+        "max_drawdown_pct": -30.327311416,
+        "historical_var_95_daily_loss_pct": 1.31082072,
+        "historical_es_95_daily_loss_pct": 1.942446507
+      },
+      "2023_2025_chronological_segment": {
+        "sessions": 752,
+        "cumulative_return_pct": 57.7141819938,
+        "annualized_return_pct": 16.4951246959,
+        "annualized_volatility_pct": 12.3422850666,
+        "sharpe_zero_risk_free_rate": 1.298903443,
+        "max_drawdown_pct": -13.4381239043,
+        "historical_var_95_daily_loss_pct": 1.1963094696,
+        "historical_es_95_daily_loss_pct": 1.6837503819
+      }
+    }
+  },
+  "important": "No raw third-party CSV bundled; archive has unclear redistribution license. This is not live pricing, independently audited corporate actions, or certified investment alpha."
+}
