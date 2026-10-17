@@ -1,0 +1,56 @@
+
+name: Pinned historical ETF audit
+
+# Manual run of archived third-party market data
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  historical-reconciliation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install research dependencies
+        run: python -m pip install -e '.[test]'
+
+      - name: Check source verification and run historical study
+        run: |
+          python -m atlas.real_study --output results/real_market --repetitions 500
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('results/real_market/reference_reconciliation.json')
+          assert path.is_file(), 'No historical reconciliation file created'
+          x = json.loads(path.read_text())
+          assert x['status'] == 'PASSED_REFERENCE_NUMERICAL_RECONCILIATION'
+          print('Reconciliation:', x['status'], 'metrics:', x['tested_metrics'])
+          PY
+
+      - name: Upload aggregate research report
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-historical-research-aggregates
+          retention-days: 14
+          path: |
+            results/real_market/reference_reconciliation.json
+            results/real_market/CASE_STUDY.md
+            results/real_market/institutional/EMPIRICAL_RESEARCH_MEMO.md
+            results/real_market/institutional/research_dashboard.html
+            results/real_market/institutional/performance_summary.csv
+            results/real_market/institutional/historical_stress_windows.csv
+            results/real_market/institutional/risk_model_diagnostics.csv
+            results/real_market/institutional/cost_sensitivity.csv
+            results/real_market/institutional/uncertainty_intervals.csv
+            results/real_market/institutional/reproduction_manifest.json
+            results/real_market/institutional/OUTPUT_SHA256.json
+          if-no-files-found: error
