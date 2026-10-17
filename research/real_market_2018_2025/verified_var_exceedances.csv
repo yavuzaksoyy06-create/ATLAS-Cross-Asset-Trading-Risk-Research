@@ -1,0 +1,5 @@
+strategy,model,forecasts,nominal_confidence_pct,nominal_expected_exceptions,actual_exceptions,kupiec_pvalue,christoffersen_conditional_coverage_pvalue
+SPY_buy_hold_net,Historical simulation,1758,99,17.58,31,0.003687324,0.000108117
+SPY_buy_hold_net,Gaussian EWMA,1758,99,17.58,42,0.0000006837,0.0000029395
+60_40,Historical simulation,1758,99,17.58,25,0.094418735,0.004306709
+60_40,Gaussian EWMA,1758,99,17.58,40,0.0000040958,0.0000049702
