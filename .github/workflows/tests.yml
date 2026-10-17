@@ -1,0 +1,30 @@
+
+name: Quant Research CI
+on: [push, pull_request]
+
+jobs:
+  unit-and-integration:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - run: python -m pip install -e '.[test]'
+      - name: Verify package compiles
+        run: python -m compileall -q src app.py
+      - name: Execute unit and integration research tests
+        run: python -m pytest -q
+
+      - name: Offline end-to-end synthetic smoke test
+        run: |
+          python examples/generate_synthetic_fixture.py
+          python -m atlas.real_study --input-csv examples/synthetic_3etf.csv --synthetic-fixture --repetitions 100 --output results/ci_synthetic
+          grep -q 'SYNTHETIC ENGINEERING FIXTURE' results/ci_synthetic/CASE_STUDY.md
+          grep -q 'SYNTHETIC ENGINEERING FIXTURE' results/ci_synthetic/institutional/EMPIRICAL_RESEARCH_MEMO.md
