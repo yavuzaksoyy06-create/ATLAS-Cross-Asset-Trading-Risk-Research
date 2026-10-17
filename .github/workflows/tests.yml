@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
-      - run: python -m pip install -e '.[test]'
+      - run: python -m pip install -e '.[test,ml]'
       - name: Verify package compiles
         run: python -m compileall -q src app.py
       - name: Execute unit and integration research tests
