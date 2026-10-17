@@ -1,0 +1,17 @@
+
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.py[cod]
+results/
+.env
+.DS_Store
+
+# Generated only to verify the offline synthetic smoke test
+examples/synthetic_3etf.csv
+
+# Do not commit separately licensed raw vendor data
+market_data/
+raw_data/
+.pip-cache/
