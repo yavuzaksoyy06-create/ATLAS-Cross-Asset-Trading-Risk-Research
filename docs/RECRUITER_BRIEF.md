@@ -72,7 +72,7 @@ A public GitHub archive pinned to a specific commit. The code verifies bytes and
 
 ## Do not say in applications
 
-- “I built a JPMorgan/Golman Sachs institutional trading platform.”
+- “I built a JPMorgan or Goldman Sachs institutional trading platform.”
 - “My ML model predicts markets accurately.”
 - “The strategy beats the market.”
 - “The data is vendor-certified / independently adjusted.”
