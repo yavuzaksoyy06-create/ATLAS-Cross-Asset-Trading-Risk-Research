@@ -1,0 +1,9 @@
+period,strategy,cagr_pct,annualized_volatility_pct,max_drawdown_pct,daily_historical_es95_pct,source_category
+2018-2025,SPY_buy_hold_net,14.14397900,19.45924374,-33.71725764,2.97225937,pinned_third_party_archive_unverified_adjustments
+2018-2025,60_40,8.14008017,12.23826674,-27.62340794,1.81728570,pinned_third_party_archive_unverified_adjustments
+2018-2025,equal_3,10.93559302,14.41590053,-30.46881806,2.14056008,pinned_third_party_archive_unverified_adjustments
+2018-2025,inverse_vol_63,9.51326310,13.07962399,-30.32731142,1.94244651,pinned_third_party_archive_unverified_adjustments
+2023-2025_previously_reviewed,SPY_buy_hold_net,23.00473761,15.34328904,-18.75523767,2.11028743,pinned_third_party_archive_unverified_adjustments
+2023-2025_previously_reviewed,60_40,13.32628613,11.40483144,-12.70418849,1.56544014,pinned_third_party_archive_unverified_adjustments
+2023-2025_previously_reviewed,equal_3,18.17680377,12.97693664,-14.53937917,1.76438451,pinned_third_party_archive_unverified_adjustments
+2023-2025_previously_reviewed,inverse_vol_63,16.49512470,12.34228507,-13.43812390,1.68375038,pinned_third_party_archive_unverified_adjustments
