@@ -1,0 +1,9 @@
+{
+  "id": "wheel-install",
+  "command": ".venv/bin/python -m pip install --no-deps --target results/stage0_wheel_installed results/stage0_wheel/atlas_trading_desk-1.2.0-py3-none-any.whl",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:45:27.442981+00:00",
+  "duration_seconds": 5.05,
+  "exit_code": 0,
+  "log": "wheel-install.log"
+}

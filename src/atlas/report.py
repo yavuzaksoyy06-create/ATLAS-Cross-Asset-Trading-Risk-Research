@@ -40,7 +40,7 @@ def write_reports(returns: pd.DataFrame, result: BacktestResult,
     fig.add_trace(go.Scatter(x=nav_benchmark.index, y=nav_benchmark,
                              name="SPY benchmark", mode="lines"), row=1, col=1)
     for x, label in ((nav_strategy, result.strategy), (nav_benchmark, "Benchmark")):
-        fig.add_trace(go.Scatter(x=x.index, y=x / x.cummax() - 1,
+        fig.add_trace(go.Scatter(x=x.index, y=x / x.cummax().clip(lower=1.0) - 1,
                                  name=f"{label} drawdown", mode="lines"), row=2, col=1)
     fig.update_layout(title=f"ATLAS | {provenance} | Historical simulation (not live)",
                       height=750, template="plotly_white")

@@ -1,0 +1,25 @@
+$ .venv/bin/python -m pytest /workspace/scratch/6c2fec220aaf/atlas-stage0-baseline/tests/test_stage0_regressions.py::test_risk_gate_rejects_missing_returns -ra
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________ test_risk_gate_rejects_missing_returns ____________________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+
+    def test_risk_gate_rejects_missing_returns(prices):
+        r = price_returns(prices)
+        # The desk deliberately assesses only the last 252 sessions.
+        r.iloc[-3, 0] = np.nan
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+../../atlas-stage0-baseline/tests/test_stage0_regressions.py:81: Failed
+=========================== short test summary info ============================
+FAILED ../../atlas-stage0-baseline/tests/test_stage0_regressions.py::test_risk_gate_rejects_missing_returns
+1 failed in 0.95s

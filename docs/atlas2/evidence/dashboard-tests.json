@@ -1,0 +1,9 @@
+{
+  "id": "dashboard-tests",
+  "command": ".venv/bin/python -m pytest tests/test_dashboard.py -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:45:27.333141+00:00",
+  "duration_seconds": 16.288,
+  "exit_code": 1,
+  "log": "dashboard-tests.log"
+}

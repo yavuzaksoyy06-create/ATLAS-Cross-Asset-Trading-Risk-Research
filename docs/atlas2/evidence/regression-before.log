@@ -1,0 +1,381 @@
+$ .venv/bin/python -m pytest tests/test_stage0_regressions.py -ra
+FF..FF.FFFFFFF.FFFF..FF                                                  [100%]
+=================================== FAILURES ===================================
+__________________ test_drawdown_counts_initial_capital_loss ___________________
+
+    def test_drawdown_counts_initial_capital_loss():
+        result = performance_stats(pd.Series([-.50] + [0.] * 39))
+>       assert result["max_drawdown"] == pytest.approx(-.50)
+E       assert 0.0 == -0.5 ± 5.0e-07
+E         
+E         comparison failed
+E         Obtained: 0.0
+E         Expected: -0.5 ± 5.0e-07
+
+tests/test_stage0_regressions.py:25: AssertionError
+__________________ test_backtest_rejects_nonfinite_costs[nan] __________________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+cost = nan
+
+    @pytest.mark.parametrize("cost", [np.nan, np.inf, -np.inf])
+    def test_backtest_rejects_nonfinite_costs(prices, cost):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:30: Failed
+_______ test_backtest_requires_chronological_unique_panel[reverse_dates] _______
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+defect = 'reverse_dates'
+
+    @pytest.mark.parametrize("defect", ["reverse_dates", "duplicate_dates", "duplicate_assets"])
+    def test_backtest_requires_chronological_unique_panel(prices, defect):
+        r = price_returns(prices)
+        if defect == "reverse_dates":
+            r = r.iloc[::-1]
+        elif defect == "duplicate_dates":
+            r.index = pd.DatetimeIndex([r.index[0]] * len(r))
+        else:
+            r.columns = ["SPY"] * r.shape[1]
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:43: Failed
+______ test_backtest_requires_chronological_unique_panel[duplicate_dates] ______
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+defect = 'duplicate_dates'
+
+    @pytest.mark.parametrize("defect", ["reverse_dates", "duplicate_dates", "duplicate_assets"])
+    def test_backtest_requires_chronological_unique_panel(prices, defect):
+        r = price_returns(prices)
+        if defect == "reverse_dates":
+            r = r.iloc[::-1]
+        elif defect == "duplicate_dates":
+            r.index = pd.DatetimeIndex([r.index[0]] * len(r))
+        else:
+            r.columns = ["SPY"] * r.shape[1]
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:43: Failed
+____________ test_historical_engine_rejects_invalid_prices[missing] ____________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+defect = 'missing'
+
+    @pytest.mark.parametrize("defect", ["missing", "reverse_dates", "zero"])
+    def test_historical_engine_rejects_invalid_prices(prices, defect):
+        p = prices[["SPY", "QQQ", "TLT"]].copy()
+        if defect == "reverse_dates":
+            p = p.iloc[::-1]
+        else:
+            p.iloc[80, 0] = np.nan if defect == "missing" else 0.
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:54: Failed
+_________ test_historical_engine_rejects_invalid_prices[reverse_dates] _________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+defect = 'reverse_dates'
+
+    @pytest.mark.parametrize("defect", ["missing", "reverse_dates", "zero"])
+    def test_historical_engine_rejects_invalid_prices(prices, defect):
+        p = prices[["SPY", "QQQ", "TLT"]].copy()
+        if defect == "reverse_dates":
+            p = p.iloc[::-1]
+        else:
+            p.iloc[80, 0] = np.nan if defect == "missing" else 0.
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:54: Failed
+_____________ test_historical_engine_rejects_invalid_prices[zero] ______________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+defect = 'zero'
+
+    @pytest.mark.parametrize("defect", ["missing", "reverse_dates", "zero"])
+    def test_historical_engine_rejects_invalid_prices(prices, defect):
+        p = prices[["SPY", "QQQ", "TLT"]].copy()
+        if defect == "reverse_dates":
+            p = p.iloc[::-1]
+        else:
+            p.iloc[80, 0] = np.nan if defect == "missing" else 0.
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:54: Failed
+_____________ test_risk_gate_rejects_invalid_quote_inputs[mid-nan] _____________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+parameter = 'mid', value = nan
+
+    @pytest.mark.parametrize("parameter,value", [
+        ("mid", np.nan), ("mid", np.inf), ("spread_bps", np.nan),
+        ("spread_bps", -1.), ("nav_usd", np.inf),
+    ])
+    def test_risk_gate_rejects_invalid_quote_inputs(prices, parameter, value):
+        r = price_returns(prices)
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+        args = dict(mid=100., ticker="SPY", side="buy", notional_usd=100.,
+                    nav_usd=1e6, assumed_adv_usd=1e8, spread_bps=4.)
+        args[parameter] = value
+        broad = RiskLimits(max_position_fraction=1., max_var95_usd=1e8,
+                           max_stress_loss_usd=1e8, max_incremental_var95_usd=1e8)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:71: Failed
+_____________ test_risk_gate_rejects_invalid_quote_inputs[mid-inf] _____________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+parameter = 'mid', value = inf
+
+    @pytest.mark.parametrize("parameter,value", [
+        ("mid", np.nan), ("mid", np.inf), ("spread_bps", np.nan),
+        ("spread_bps", -1.), ("nav_usd", np.inf),
+    ])
+    def test_risk_gate_rejects_invalid_quote_inputs(prices, parameter, value):
+        r = price_returns(prices)
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+        args = dict(mid=100., ticker="SPY", side="buy", notional_usd=100.,
+                    nav_usd=1e6, assumed_adv_usd=1e8, spread_bps=4.)
+        args[parameter] = value
+        broad = RiskLimits(max_position_fraction=1., max_var95_usd=1e8,
+                           max_stress_loss_usd=1e8, max_incremental_var95_usd=1e8)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:71: Failed
+_________ test_risk_gate_rejects_invalid_quote_inputs[spread_bps-nan] __________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+parameter = 'spread_bps', value = nan
+
+    @pytest.mark.parametrize("parameter,value", [
+        ("mid", np.nan), ("mid", np.inf), ("spread_bps", np.nan),
+        ("spread_bps", -1.), ("nav_usd", np.inf),
+    ])
+    def test_risk_gate_rejects_invalid_quote_inputs(prices, parameter, value):
+        r = price_returns(prices)
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+        args = dict(mid=100., ticker="SPY", side="buy", notional_usd=100.,
+                    nav_usd=1e6, assumed_adv_usd=1e8, spread_bps=4.)
+        args[parameter] = value
+        broad = RiskLimits(max_position_fraction=1., max_var95_usd=1e8,
+                           max_stress_loss_usd=1e8, max_incremental_var95_usd=1e8)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:71: Failed
+_________ test_risk_gate_rejects_invalid_quote_inputs[spread_bps--1.0] _________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+parameter = 'spread_bps', value = -1.0
+
+    @pytest.mark.parametrize("parameter,value", [
+        ("mid", np.nan), ("mid", np.inf), ("spread_bps", np.nan),
+        ("spread_bps", -1.), ("nav_usd", np.inf),
+    ])
+    def test_risk_gate_rejects_invalid_quote_inputs(prices, parameter, value):
+        r = price_returns(prices)
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+        args = dict(mid=100., ticker="SPY", side="buy", notional_usd=100.,
+                    nav_usd=1e6, assumed_adv_usd=1e8, spread_bps=4.)
+        args[parameter] = value
+        broad = RiskLimits(max_position_fraction=1., max_var95_usd=1e8,
+                           max_stress_loss_usd=1e8, max_incremental_var95_usd=1e8)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:71: Failed
+____________________ test_risk_gate_rejects_missing_returns ____________________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+
+    def test_risk_gate_rejects_missing_returns(prices):
+        r = price_returns(prices)
+        r.iloc[3, 0] = np.nan
+        w = pd.Series(0., index=r.columns)
+        w["SPY"], w["BIL"] = .5, .5
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:80: Failed
+___ test_exception_tests_reject_nonbinary_or_multidimensional_data[invalid0] ___
+
+invalid = array([0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+       0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+       0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+       0.5])
+
+    @pytest.mark.parametrize("invalid", [np.full(40, .5), np.zeros((40, 2))])
+    def test_exception_tests_reject_nonbinary_or_multidimensional_data(invalid):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:86: Failed
+___ test_exception_tests_reject_nonbinary_or_multidimensional_data[invalid1] ___
+
+invalid = array([[0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],...       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.]])
+
+    @pytest.mark.parametrize("invalid", [np.full(40, .5), np.zeros((40, 2))])
+    def test_exception_tests_reject_nonbinary_or_multidimensional_data(invalid):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:86: Failed
+________________________ test_ml_rejects_reverse_dates _________________________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+
+    def test_ml_rejects_reverse_dates(prices):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:91: Failed
+_____________________ test_reference_rejects_nan_tolerance _____________________
+
+    def test_reference_rejects_nan_tolerance():
+        from atlas.real_study import ARCHIVE_COMMIT, GIT_BLOBS
+        from atlas.reference_validation import check_reference
+        path = Path(__file__).resolve().parents[1] / "research/real_market_2018_2025/REFERENCE_RESULTS.json"
+        reference = json.loads(path.read_text())
+        summary = reference["results"]
+        summary["60_40"]["2018_2025"]["annualized_return_pct"] += 100
+        source = dict(data_category="HISTORICAL_ARCHIVED_ETF_CLOSES_NOT_SYNTHETIC",
+                      pinned_repository_commit=ARCHIVE_COMMIT, git_blob_sha1=GIT_BLOBS,
+                      observations=2011)
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_stage0_regressions.py:128: Failed
+____________ test_repeated_publication_manifest_never_hashes_itself ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_repeated_publication_mani0')
+
+    def test_repeated_publication_manifest_never_hashes_itself(tmp_path):
+        from atlas.institutional_report import investigate, publish
+        rng = np.random.default_rng(911)
+        p = pd.DataFrame(100 * np.exp(np.cumsum(rng.normal(0, .01, (850, 3)), axis=0)),
+                         index=pd.bdate_range("2020-01-01", periods=850),
+                         columns=["SPY", "QQQ", "TLT"])
+        study = investigate(p, bootstrap_repetitions=100, risk_window=85)
+        source = {"data_category": "SYNTHETIC_TEST_FIXTURE"}
+        first = publish(study, tmp_path, source, include_plotly=False)
+        second = publish(study, tmp_path, source, include_plotly=False)
+>       assert "OUTPUT_SHA256.json" not in second
+E       AssertionError: assert 'OUTPUT_SHA256.json' not in {'risk_model_diagnostics.csv': '4d985fb9c5ea6b16b79025c316cf04a14763ae2b63457e6fc84d22d2addd9829', 'performance_summar...5e21262e4cd6aec', 'uncertainty_intervals.csv': 'c2f7ca4e00286208b8a63a362d0d4f29b7dea3eae66737aa0741adcd49b74cc7', ...}
+
+tests/test_stage0_regressions.py:142: AssertionError
+=============================== warnings summary ===============================
+tests/test_stage0_regressions.py::test_historical_engine_rejects_invalid_prices[zero]
+  /workspace/scratch/6c2fec220aaf/work/ATLAS/src/atlas/real_study.py:168: RuntimeWarning: invalid value encountered in dot
+    gross = float(np.dot(weights, r[i]))
+
+tests/test_stage0_regressions.py::test_historical_engine_rejects_invalid_prices[zero]
+  /workspace/scratch/6c2fec220aaf/work/ATLAS/src/atlas/real_study.py:170: RuntimeWarning: invalid value encountered in multiply
+    weights = weights * (1 + r[i]) / (1 + gross)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_stage0_regressions.py::test_drawdown_counts_initial_capital_loss
+FAILED tests/test_stage0_regressions.py::test_backtest_rejects_nonfinite_costs[nan]
+FAILED tests/test_stage0_regressions.py::test_backtest_requires_chronological_unique_panel[reverse_dates]
+FAILED tests/test_stage0_regressions.py::test_backtest_requires_chronological_unique_panel[duplicate_dates]
+FAILED tests/test_stage0_regressions.py::test_historical_engine_rejects_invalid_prices[missing]
+FAILED tests/test_stage0_regressions.py::test_historical_engine_rejects_invalid_prices[reverse_dates]
+FAILED tests/test_stage0_regressions.py::test_historical_engine_rejects_invalid_prices[zero]
+FAILED tests/test_stage0_regressions.py::test_risk_gate_rejects_invalid_quote_inputs[mid-nan]
+FAILED tests/test_stage0_regressions.py::test_risk_gate_rejects_invalid_quote_inputs[mid-inf]
+FAILED tests/test_stage0_regressions.py::test_risk_gate_rejects_invalid_quote_inputs[spread_bps-nan]
+FAILED tests/test_stage0_regressions.py::test_risk_gate_rejects_invalid_quote_inputs[spread_bps--1.0]
+FAILED tests/test_stage0_regressions.py::test_risk_gate_rejects_missing_returns
+FAILED tests/test_stage0_regressions.py::test_exception_tests_reject_nonbinary_or_multidimensional_data[invalid0]
+FAILED tests/test_stage0_regressions.py::test_exception_tests_reject_nonbinary_or_multidimensional_data[invalid1]
+FAILED tests/test_stage0_regressions.py::test_ml_rejects_reverse_dates - Fail...
+FAILED tests/test_stage0_regressions.py::test_reference_rejects_nan_tolerance
+FAILED tests/test_stage0_regressions.py::test_repeated_publication_manifest_never_hashes_itself
+17 failed, 6 passed, 2 warnings in 25.10s

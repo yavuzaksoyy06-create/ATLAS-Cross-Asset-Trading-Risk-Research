@@ -1,0 +1,8 @@
+{
+  "status": "PASSED_REFERENCE_NUMERICAL_RECONCILIATION",
+  "reference_kind": "Independent JavaScript evaluator of pinned archived public ETF closes",
+  "tested_metrics": 48,
+  "tolerance_percentage_points": 0.05,
+  "max_absolute_difference_percentage_points": 0.0,
+  "limits": "Checks numerical agreement only; does not certify vendor dividends, prices, data rights or alpha."
+}

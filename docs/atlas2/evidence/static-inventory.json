@@ -1,0 +1,212 @@
+{
+  "current_tracked_files": 59,
+  "historical_commits_scanned": 16,
+  "historical_unique_blobs_scanned": 63,
+  "patterns": [
+    "private_key",
+    "github_token",
+    "aws_access_key"
+  ],
+  "current_matches": [],
+  "historical_matches": [],
+  "limitations": "Narrow credential pattern scan only; not an exhaustive secret scan, dependency vulnerability audit or penetration test. No matched values are emitted.",
+  "license_file_present": false,
+  "modules": {
+    "src/atlas/__init__.py": {
+      "lines": 2,
+      "functions": [],
+      "classes": []
+    },
+    "src/atlas/__main__.py": {
+      "lines": 2,
+      "functions": [],
+      "classes": []
+    },
+    "src/atlas/backtest.py": {
+      "lines": 82,
+      "functions": [
+        "run_backtest"
+      ],
+      "classes": [
+        "BacktestResult"
+      ]
+    },
+    "src/atlas/cli.py": {
+      "lines": 97,
+      "functions": [
+        "main"
+      ],
+      "classes": []
+    },
+    "src/atlas/data.py": {
+      "lines": 98,
+      "functions": [
+        "validate_prices",
+        "synthetic_prices",
+        "load_csv",
+        "yahoo_prices",
+        "price_returns"
+      ],
+      "classes": []
+    },
+    "src/atlas/desk.py": {
+      "lines": 131,
+      "functions": [
+        "decide_trade",
+        "write_decision_memo"
+      ],
+      "classes": [
+        "RiskLimits",
+        "TradeDecision"
+      ]
+    },
+    "src/atlas/evaluation.py": {
+      "lines": 127,
+      "functions": [
+        "paired_block_bootstrap",
+        "evaluate_fixed_strategies",
+        "write_evaluation"
+      ],
+      "classes": [
+        "EvaluationResult"
+      ]
+    },
+    "src/atlas/historical_events.py": {
+      "lines": 44,
+      "functions": [
+        "replay_event_windows"
+      ],
+      "classes": []
+    },
+    "src/atlas/institutional_report.py": {
+      "lines": 342,
+      "functions": [
+        "costed_buy_hold",
+        "_full_metrics",
+        "investigate",
+        "_markdown_table",
+        "publish"
+      ],
+      "classes": [
+        "InstitutionalStudy"
+      ]
+    },
+    "src/atlas/institutional_risk.py": {
+      "lines": 109,
+      "functions": [
+        "_loglik_bernoulli",
+        "exception_tests",
+        "ewma_forecast_variance",
+        "rolling_risk_validation"
+      ],
+      "classes": [
+        "RiskBacktest"
+      ]
+    },
+    "src/atlas/ml.py": {
+      "lines": 96,
+      "functions": [
+        "make_features",
+        "walk_forward_downside"
+      ],
+      "classes": [
+        "MLResult"
+      ]
+    },
+    "src/atlas/optimization.py": {
+      "lines": 54,
+      "functions": [
+        "min_cvar_weights"
+      ],
+      "classes": []
+    },
+    "src/atlas/provenance.py": {
+      "lines": 71,
+      "functions": [
+        "snapshot_prices",
+        "verify_snapshot"
+      ],
+      "classes": []
+    },
+    "src/atlas/real_study.py": {
+      "lines": 344,
+      "functions": [
+        "blob_sha1",
+        "archive_url",
+        "parse_archive_csv",
+        "read_pinned_market_data",
+        "make_targets",
+        "historical_backtest",
+        "strategy_summary",
+        "run_study",
+        "write_study",
+        "main"
+      ],
+      "classes": []
+    },
+    "src/atlas/reference_validation.py": {
+      "lines": 58,
+      "functions": [
+        "check_reference"
+      ],
+      "classes": []
+    },
+    "src/atlas/report.py": {
+      "lines": 86,
+      "functions": [
+        "write_reports",
+        "_has_tabulate"
+      ],
+      "classes": []
+    },
+    "src/atlas/research_labels.py": {
+      "lines": 18,
+      "functions": [
+        "source_kind",
+        "is_pinned"
+      ],
+      "classes": []
+    },
+    "src/atlas/research_qa.py": {
+      "lines": 43,
+      "functions": [
+        "audit_prices",
+        "cost_sensitivity"
+      ],
+      "classes": []
+    },
+    "src/atlas/rfq.py": {
+      "lines": 78,
+      "functions": [
+        "simulate_rfq"
+      ],
+      "classes": [
+        "RFQResult"
+      ]
+    },
+    "src/atlas/risk.py": {
+      "lines": 107,
+      "functions": [
+        "historical_var_es",
+        "performance_stats",
+        "stress_portfolio",
+        "risk_contributions",
+        "var_coverage_backtest"
+      ],
+      "classes": []
+    },
+    "src/atlas/strategies.py": {
+      "lines": 82,
+      "functions": [
+        "_weight",
+        "equal_weight",
+        "inverse_volatility",
+        "momentum_rotation",
+        "market_regime",
+        "regime_allocation",
+        "cvar_allocation"
+      ],
+      "classes": []
+    }
+  }
+}

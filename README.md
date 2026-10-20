@@ -138,6 +138,7 @@ Local offline mode is documented in [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md
 
 ## Technical documentation
 
+- [ATLAS 2.0 Stage 0 audit, actual test evidence and development contract](docs/atlas2/STAGE_0_AUDIT.md) — preserves this historical research; future platform stages require review.
 - [Empirical evidence and interpretation](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md)
 - [Research methodology and formulas](docs/RESEARCH_METHODOLOGY.md)
 - [Source provenance and reproducibility](docs/REPRODUCIBILITY.md)

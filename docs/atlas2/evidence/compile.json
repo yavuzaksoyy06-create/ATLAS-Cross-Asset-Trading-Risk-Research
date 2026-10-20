@@ -1,0 +1,9 @@
+{
+  "id": "compile",
+  "command": ".venv/bin/python -m compileall -q src app.py",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:45:27.328735+00:00",
+  "duration_seconds": 0.684,
+  "exit_code": 0,
+  "log": "compile.log"
+}

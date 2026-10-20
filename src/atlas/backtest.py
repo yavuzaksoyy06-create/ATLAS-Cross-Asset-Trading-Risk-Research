@@ -28,12 +28,16 @@ def run_backtest(returns: pd.DataFrame, strategy: str = "regime",
         raise ValueError(f"Unknown strategy: {strategy}")
     if returns.empty or len(returns) < 2 or returns.isna().any().any():
         raise ValueError("Clean, nonempty historical return panel required.")
+    if (not isinstance(returns.index, pd.DatetimeIndex)
+            or returns.index.hasnans or returns.index.has_duplicates
+            or not returns.index.is_monotonic_increasing or returns.columns.has_duplicates):
+        raise ValueError("Unique assets and sorted, unique observation dates required.")
     if not np.isfinite(returns.to_numpy()).all() or (returns <= -1).any().any():
         raise ValueError("Returns must be finite and above -100%.")
     if rebalance_every < 1 or min_training_days < 1 or min_training_days >= len(returns):
         raise ValueError("Rebalance and warmup parameters are invalid.")
-    if fee_bps < 0 or slippage_bps < 0:
-        raise ValueError("Costs cannot be negative.")
+    if not np.isfinite([fee_bps, slippage_bps]).all() or fee_bps < 0 or slippage_bps < 0:
+        raise ValueError("Costs must be finite and nonnegative.")
     universe = list(returns.columns)
     current = pd.Series(0.0, index=universe)
     daily, turnover, costs, weights = [], [], [], []

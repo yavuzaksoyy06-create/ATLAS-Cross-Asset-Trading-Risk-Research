@@ -1,0 +1,8 @@
+$ .venv/bin/python -m atlas.real_study --output results/stage0_corrected_historical --repetitions 500
+Pinned archive reference reconciliation: PASSED_REFERENCE_NUMERICAL_RECONCILIATION
+Price observations: 2011, 2018-01-02–2025-12-31
+SPY post-2023 segment CAGR (NO COST): 23.00%
+Published independent costed SPY comparator, event windows, 99% VaR coverage and uncertainty.
+SOURCE CATEGORY: PINNED THIRD-PARTY ARCHIVE — UNVERIFIED PRICE ADJUSTMENT
+RESEARCH LIMIT: Reviewed 2023–25 segment is NOT an untouched independent holdout.
+Outputs: results/stage0_corrected_historical

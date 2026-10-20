@@ -1,0 +1,9 @@
+{
+  "id": "regression-before",
+  "command": ".venv/bin/python -m pytest tests/test_stage0_regressions.py -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:43:54.067207+00:00",
+  "duration_seconds": 28.02,
+  "exit_code": 1,
+  "log": "regression-before.log"
+}

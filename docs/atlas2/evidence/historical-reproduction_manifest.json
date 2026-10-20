@@ -1,0 +1,104 @@
+{
+  "source": {
+    "data_category": "HISTORICAL_ARCHIVED_ETF_CLOSES_NOT_SYNTHETIC",
+    "origin_archive": "https://github.com/revred/TradeSmart.Tracker",
+    "origin_description": "Archive README names Stooq primary / Yahoo secondary. Not independently audited.",
+    "pinned_repository_commit": "7d9d769b0f2ddcedf4c1703cc979b865a37b580d",
+    "git_blob_sha1": {
+      "SPY": "38acc25a077e23fdf107102960c3df32f1543a7d",
+      "QQQ": "410dc48d874ab666b6e22f529f395c0d9ca70060",
+      "TLT": "24c628146c0d393589cc3aba3b290156a7703639"
+    },
+    "raw_file_sha256": {
+      "SPY": "a78815f3f7a87d61d0793489f7bb758e8764309af82b747fef0828cd88d49691",
+      "QQQ": "0b3df3507af694990beef375a87e2458c1c09e2051393f89ea53cc7074418d64",
+      "TLT": "b4f3a4f3808e9992a86d5cd1fef8265f1c46911126cfa0f81c76db140095bc14"
+    },
+    "source_urls": {
+      "SPY": "https://raw.githubusercontent.com/revred/TradeSmart.Tracker/7d9d769b0f2ddcedf4c1703cc979b865a37b580d/market/us/spy.csv",
+      "QQQ": "https://raw.githubusercontent.com/revred/TradeSmart.Tracker/7d9d769b0f2ddcedf4c1703cc979b865a37b580d/market/us/qqq.csv",
+      "TLT": "https://raw.githubusercontent.com/revred/TradeSmart.Tracker/7d9d769b0f2ddcedf4c1703cc979b865a37b580d/market/us/tlt.csv"
+    },
+    "source_acquisition": "HTTPS pinned archive download",
+    "first_observation": "2018-01-02",
+    "last_observation": "2025-12-31",
+    "observations": 2011,
+    "price_adjustment": "Archive says close adjusted for dividends and splits; third-party claim unverified.",
+    "redistribution": "No raw third-party historical market files included; check usage rights."
+  },
+  "methodology": {
+    "study_type": "retrospective_exploratory_non_preregistered",
+    "no_untouched_test_claim": true,
+    "historical_observations": 2011,
+    "return_observations": 2010,
+    "first_observation": "2018-01-02",
+    "last_observation": "2025-12-31",
+    "reviewed_segment_starts": "2023-01-03",
+    "assets": [
+      "SPY",
+      "QQQ",
+      "TLT"
+    ],
+    "allocation_rules": [
+      "60_40",
+      "equal_3",
+      "inverse_vol_63"
+    ],
+    "portfolio_rebalance_sessions": 21,
+    "one_way_turnover_cost_bps": 8,
+    "buy_and_hold_initial_purchase_cost_bps": 8,
+    "benchmark_cost_method": "Charge single initial SPY buy; no end liquidation fee",
+    "other_benchmark": "SPY_benchmark_no_cost retained solely for continuity and transparency",
+    "bootstrap_meaning": "circular paired-block CI for annualized arithmetic mean daily excess",
+    "bootstrap_multiple_comparisons_warning": "Three comparisons; unadjusted intervals are exploratory",
+    "risk_backtest": {
+      "window_sessions": 252,
+      "confidence": 0.99,
+      "models": [
+        "historical_simulation",
+        "zero_mean_Gaussian_EWMA"
+      ],
+      "coverage_tests": [
+        "Kupiec LRuc",
+        "Christoffersen LRind",
+        "LRcc"
+      ],
+      "warning": "Large-sample chi-square p-values have low power at 99% with few breaches"
+    },
+    "risk_free_rate_assumption": 0.0,
+    "backtest_timing": "Allocation at t uses price changes ending at t-1 or earlier",
+    "crisis_labels": "Ex-post date windows; only genuine historical market events for a verified archive input, otherwise calendar-window engineering checks",
+    "market_data": "Third-party archive claims prices adjusted for splits/dividends; not independently audited and may be subject to redistribution restrictions",
+    "execution": "Daily close-to-close approximation; assumed commission+slippage, not executed fills",
+    "research_limits": [
+      "hindsight ETF asset universe",
+      "look-ahead-free algorithm does not make selection point-in-time",
+      "no financing/borrow/taxes/cash return",
+      "no order book or real ADV",
+      "observed results do not imply predictive success",
+      "source vendor rights not independently verified"
+    ]
+  },
+  "data_quality": {
+    "first": "2018-01-02",
+    "last": "2025-12-31",
+    "observations": 2011,
+    "assets": [
+      "SPY",
+      "QQQ",
+      "TLT"
+    ],
+    "duplicate_dates": 0,
+    "week_gap_gt_5_calendar_days": 0,
+    "extreme_daily_moves": [],
+    "warning": "Flags are triage, not proof of data errors. Splits, total-return and calendar assumptions must be checked against vendor records."
+  },
+  "outputs": [
+    "cost_sensitivity.csv",
+    "historical_stress_windows.csv",
+    "performance_summary.csv",
+    "risk_model_diagnostics.csv",
+    "uncertainty_intervals.csv"
+  ],
+  "disclosure": "Research results only; no raw vendor price archive distributed."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "regression-after",
+  "command": ".venv/bin/python -m pytest tests/test_stage0_regressions.py -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:45:03.513653+00:00",
+  "duration_seconds": 9.97,
+  "exit_code": 1,
+  "log": "regression-after.log"
+}

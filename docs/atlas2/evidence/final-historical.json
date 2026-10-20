@@ -1,0 +1,9 @@
+{
+  "id": "final-historical",
+  "command": ".venv/bin/python -m atlas.real_study --output results/stage0_final_historical --repetitions 500",
+  "cwd": "repository root",
+  "started_utc": "2026-10-20T10:31:39.225896+00:00",
+  "duration_seconds": 30.01,
+  "exit_code": 0,
+  "log": "final-historical.log"
+}

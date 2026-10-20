@@ -1,0 +1,9 @@
+{
+  "id": "yahoo-smoke",
+  "command": ".venv/bin/python -c 'from atlas.data import yahoo_prices; p = yahoo_prices([\"SPY\", \"QQQ\"], start=\"2025-01-02\", end=\"2025-01-16\"); print(\"Source: Yahoo research feed, adjustments unverified\", p.shape, p.index.min(), p.index.max()); assert not p.empty'",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T21:15:39.867503+00:00",
+  "duration_seconds": 10.575,
+  "exit_code": 0,
+  "log": "yahoo-smoke.log"
+}

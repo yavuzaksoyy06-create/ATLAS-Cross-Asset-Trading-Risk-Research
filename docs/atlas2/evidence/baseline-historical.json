@@ -1,0 +1,9 @@
+{
+  "id": "baseline-historical",
+  "command": ".venv/bin/python -m atlas.real_study --output results/stage0_baseline_historical --repetitions 500",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:43:03.466230+00:00",
+  "duration_seconds": 34.843,
+  "exit_code": 0,
+  "log": "baseline-historical.log"
+}

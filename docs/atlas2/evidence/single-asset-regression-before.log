@@ -1,0 +1,52 @@
+$ .venv/bin/python -m pytest tests/test_stage0_regressions.py::test_ml_preserves_single_asset_feature_contract -ra
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_ml_preserves_single_asset_feature_contract ________________
+
+prices =                    SPY         QQQ  ...         HYG         BIL
+2024-06-03   99.901949   99.923770  ...  100.052694   ...0  ...  114.045445  107.303543
+2026-10-16  117.309614  117.699793  ...  114.799158  107.238195
+
+[620 rows x 10 columns]
+
+    def test_ml_preserves_single_asset_feature_contract(prices):
+        from atlas.data import validate_prices
+        single = prices[["SPY"]]
+>       features, labels = make_features(single)
+                           ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_stage0_regressions.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/atlas/ml.py:31: in make_features
+    prices = validate_prices(prices)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prices =                    SPY
+2024-06-03   99.901949
+2024-06-04   99.021307
+2024-06-05   99.020978
+2024-06-06  100.459706
+202...863
+2026-10-13  116.988547
+2026-10-14  116.218342
+2026-10-15  116.769494
+2026-10-16  117.309614
+
+[620 rows x 1 columns]
+
+    def validate_prices(prices: pd.DataFrame) -> pd.DataFrame:
+        """Normalize and validate wide adjusted-close price matrices.
+    
+        Missing rows are intentionally NOT forward-filled: that can hide stale prices.
+        """
+        if not isinstance(prices.index, pd.DatetimeIndex):
+            raise ValueError("Index must be a DatetimeIndex.")
+        if prices.empty or prices.shape[1] < 2:
+>           raise ValueError("At least two assets and one observation are required.")
+E           ValueError: At least two assets and one observation are required.
+
+src/atlas/data.py:17: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_stage0_regressions.py::test_ml_preserves_single_asset_feature_contract
+1 failed in 2.03s

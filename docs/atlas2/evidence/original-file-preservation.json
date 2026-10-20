@@ -1,0 +1,37 @@
+{
+  "baseline_commit": "33da05d887a6af9304013437bdbe42e20d184aa8",
+  "original_files": 59,
+  "deleted": [],
+  "changed": [
+    ".github/workflows/tests.yml",
+    ".gitignore",
+    "README.md",
+    "src/atlas/backtest.py",
+    "src/atlas/data.py",
+    "src/atlas/institutional_report.py",
+    "src/atlas/institutional_risk.py",
+    "src/atlas/ml.py",
+    "src/atlas/real_study.py",
+    "src/atlas/reference_validation.py",
+    "src/atlas/report.py",
+    "src/atlas/rfq.py",
+    "src/atlas/risk.py"
+  ],
+  "unchanged_count": 46,
+  "protected_research_assets_and_release_record": [
+    "RELEASE_INTEGRITY.json",
+    "docs/assets/atlas_research_snapshot.svg",
+    "docs/assets/atlas_var_backtest.svg",
+    "docs/assets/reference_comparison.png",
+    "research/real_market_2018_2025/EMPIRICAL_FINDINGS.md",
+    "research/real_market_2018_2025/HISTORICAL_REFERENCE.md",
+    "research/real_market_2018_2025/REFERENCE_RESULTS.json",
+    "research/real_market_2018_2025/dashboard_real_data.html",
+    "research/real_market_2018_2025/reference_metrics.csv",
+    "research/real_market_2018_2025/reference_reconciliation.json",
+    "research/real_market_2018_2025/verified_performance_summary.csv",
+    "research/real_market_2018_2025/verified_stress_summary.csv",
+    "research/real_market_2018_2025/verified_var_exceedances.csv"
+  ],
+  "all_protected_byte_identical": true
+}

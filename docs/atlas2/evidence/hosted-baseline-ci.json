@@ -1,0 +1,172 @@
+{
+  "scope": "Existing main matrix and earlier historical run; not new Stage 0 head CI",
+  "records": [
+    {
+      "queried_url": "https://api.github.com/repos/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39065453543",
+      "id": 39065453543,
+      "name": "Quant Research CI",
+      "head_sha": "33da05d887a6af9304013437bdbe42e20d184aa8",
+      "conclusion": "success",
+      "status": "completed",
+      "url": "https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39065453543",
+      "created_at": "2026-10-17T20:08:33Z"
+    },
+    {
+      "queried_url": "https://api.github.com/repos/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600",
+      "id": 39064709600,
+      "name": "Pinned historical ETF audit",
+      "head_sha": "3f90aae70757cf5494f065d8c36d8a80ec8f7e4f",
+      "conclusion": "success",
+      "status": "completed",
+      "url": "https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600",
+      "created_at": "2026-10-17T19:58:06Z"
+    },
+    {
+      "queried_url": "https://api.github.com/repos/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39065453543/jobs",
+      "jobs": [
+        {
+          "id": 117492046774,
+          "name": "unit-and-integration (3.13)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -e '.[test,ml]'",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify package compiles",
+              "conclusion": "success"
+            },
+            {
+              "name": "Execute unit and integration research tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Offline end-to-end synthetic smoke test",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 117492046991,
+          "name": "unit-and-integration (3.11)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -e '.[test,ml]'",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify package compiles",
+              "conclusion": "success"
+            },
+            {
+              "name": "Execute unit and integration research tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Offline end-to-end synthetic smoke test",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 117492047085,
+          "name": "unit-and-integration (3.12)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install -e '.[test,ml]'",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify package compiles",
+              "conclusion": "success"
+            },
+            {
+              "name": "Execute unit and integration research tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Offline end-to-end synthetic smoke test",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recorded_utc": "2026-10-19T21:20:21.910206+00:00"
+}

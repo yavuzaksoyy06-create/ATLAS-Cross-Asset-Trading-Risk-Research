@@ -2,9 +2,13 @@
 name: Quant Research CI
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   unit-and-integration:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -28,3 +32,16 @@ jobs:
           python -m atlas.real_study --input-csv examples/synthetic_3etf.csv --synthetic-fixture --repetitions 100 --output results/ci_synthetic
           grep -q 'SYNTHETIC ENGINEERING FIXTURE' results/ci_synthetic/CASE_STUDY.md
           grep -q 'SYNTHETIC ENGINEERING FIXTURE' results/ci_synthetic/institutional/EMPIRICAL_RESEARCH_MEMO.md
+
+  dashboard-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: python -m pip install -e '.[test,dashboard]'
+      - name: Exercise synthetic dashboard and empty state
+        run: python -m pytest tests/test_dashboard.py -q

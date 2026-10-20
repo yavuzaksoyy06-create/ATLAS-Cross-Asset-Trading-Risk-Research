@@ -1,0 +1,10 @@
+$ .venv/bin/python -m atlas --source synthetic --strategy regime --freeze-data --evaluate --bootstrap-reps 100 --trade-demo --run-ml --output results/stage0_desk
+Verified dataset SHA256: 6446bbbca0c68b940df4d337073a230395d68405f6f4102ddda5fcb55329112c
+ATLAS complete: results/stage0_desk | SYNTHETIC GENERATED DATA (seed=2026, NOT REAL RETURNS)
+Strategy: regime | current heuristic regime: Risk-Off
+Historical 1d 95% VaR: 1.25%
+Fixed-date comparison generated: 2025-03-03; 5 candidate rules
+RESEARCH WARNING: results seen after test inspection cannot be treated as untouched holdout.
+Example risk gate: REJECT; reasons: ['POSITION_LIMIT: largest weight 52.00% > 40.00%']
+ML validation: model Brier=0.0839, base rate=0.0820
+IMPORTANT: Demonstration ≠ verified alpha, execution, or investment advice.

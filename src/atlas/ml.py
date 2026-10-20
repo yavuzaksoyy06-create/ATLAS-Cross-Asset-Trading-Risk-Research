@@ -8,6 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import numpy as np
 import pandas as pd
+from .data import validate_prices
 
 
 @dataclass
@@ -27,6 +28,7 @@ def make_features(prices: pd.DataFrame, primary: str = "SPY", horizon: int = 5,
     """
     if primary not in prices or horizon < 1:
         raise ValueError("Invalid target ticker or prediction horizon.")
+    prices = validate_prices(prices, minimum_assets=1)
     closes = prices[primary]
     daily = closes.pct_change(fill_method=None)
     X = pd.DataFrame(index=prices.index)

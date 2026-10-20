@@ -1,0 +1,111 @@
+$ .venv/bin/python -m pytest tests/test_dashboard.py -ra
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+___________________ test_csv_without_upload_has_empty_state ____________________
+
+    def test_csv_without_upload_has_empty_state():
+        at = AppTest.from_file(str(APP), default_timeout=60).run()
+>       at.selectbox[0].set_value("CSV uploaded adjusted closes").run()
+
+tests/test_dashboard.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:474: in run
+    return self.root.run(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:3869: in run
+    widget_states = self.get_widget_states()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:3847: in get_widget_states
+    w = get_widget_state(node)
+        ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:3757: in get_widget_state
+    return node._widget_state
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:2591: in _widget_state
+    if self.index is not None and len(self.options) > 0:
+       ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Selectbox(_value='CSV uploaded adjusted closes', label='Instrument', options=['SPY', 'QQQ', 'IWM', 'EEM', 'TLT', 'IEF', 'GLD', 'UUP', 'HYG'])
+
+    @property
+    def index(self) -> int | None:
+        """The index of the current selection. (int)"""  # noqa: D400
+        if self.value is None:
+            return None
+    
+        if len(self.options) == 0:
+            return 0
+        formatted_value = _format_value_for_widget(self.format_func, self.value)
+>       return self.options.index(formatted_value)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: 'CSV uploaded adjusted closes' is not in list
+
+.venv/lib/python3.12/site-packages/streamlit/testing/v1/element_tree.py:2552: ValueError
+----------------------------- Captured stderr call -----------------------------
+2026-10-19 18:45:39.218 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 18:45:41.539 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 18:45:41.561 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 18:45:41.567 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 18:45:41.591 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 18:45:41.610 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 18:45:41.650 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+------------------------------ Captured log call -------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+=========================== short test summary info ============================
+FAILED tests/test_dashboard.py::test_csv_without_upload_has_empty_state - Val...
+1 failed, 1 passed in 14.08s

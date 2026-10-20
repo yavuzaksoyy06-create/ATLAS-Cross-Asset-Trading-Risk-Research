@@ -1,0 +1,89 @@
+$ .venv/bin/python -m pytest -ra
+
+==================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_atlas.py _____________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_atlas.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_atlas.py:2: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+_____________ ERROR collecting tests/test_institutional_report.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_institutional_report.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_institutional_report.py:4: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+____________________ ERROR collecting tests/test_phase2.py _____________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_phase2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_phase2.py:4: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+_____________ ERROR collecting tests/test_pinned_local_archive.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_pinned_local_archive.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pinned_local_archive.py:4: in <module>
+    from atlas.real_study import read_pinned_market_data, blob_sha1, GIT_BLOBS, archive_url
+src/atlas/real_study.py:24: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+__________________ ERROR collecting tests/test_real_study.py ___________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_real_study.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_real_study.py:4: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+_____________ ERROR collecting tests/test_reference_validation.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_reference_validation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_reference_validation.py:5: in <module>
+    from atlas.reference_validation import check_reference
+src/atlas/reference_validation.py:11: in <module>
+    from .real_study import ARCHIVE_COMMIT, GIT_BLOBS, SYMBOLS
+src/atlas/real_study.py:24: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+_______________ ERROR collecting tests/test_source_integrity.py ________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_source_integrity.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_source_integrity.py:4: in <module>
+    import pandas as pd
+E   ModuleNotFoundError: No module named 'pandas'
+=========================== short test summary info ============================
+ERROR tests/test_atlas.py
+ERROR tests/test_institutional_report.py
+ERROR tests/test_phase2.py
+ERROR tests/test_pinned_local_archive.py
+ERROR tests/test_real_study.py
+ERROR tests/test_reference_validation.py
+ERROR tests/test_source_integrity.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 7 errors during collection !!!!!!!!!!!!!!!!!!!!
+7 errors in 0.58s

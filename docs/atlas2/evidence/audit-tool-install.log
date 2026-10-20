@@ -1,0 +1,6 @@
+$ .venv/bin/python -m pip install coverage
+Collecting coverage
+  Downloading coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.2 kB)
+Downloading coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (258 kB)
+Installing collected packages: coverage
+Successfully installed coverage-7.16.2

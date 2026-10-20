@@ -1,0 +1,2 @@
+$ .venv/bin/python examples/generate_synthetic_fixture.py
+SYNTHETIC DEMO ONLY: /workspace/scratch/6c2fec220aaf/work/ATLAS/examples/synthetic_3etf.csv
