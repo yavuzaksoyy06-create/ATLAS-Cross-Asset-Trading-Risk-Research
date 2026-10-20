@@ -31,13 +31,14 @@ def historical_var_es(daily: pd.Series, confidence: float = .95) -> tuple[float,
 
 def performance_stats(daily: pd.Series, annualization: int = 252) -> dict[str, float]:
     x = pd.Series(daily, dtype=float).dropna()
-    if len(x) < 30 or (x <= -1).any():
+    if len(x) < 30 or not np.isfinite(x.to_numpy()).all() or (x <= -1).any():
         raise ValueError("Need 30+ finite returns above -100%.")
     annual_return = float((1 + x).prod() ** (annualization / len(x)) - 1)
     vol = float(x.std(ddof=1) * np.sqrt(annualization))
     sharpe = float(x.mean() / x.std(ddof=1) * np.sqrt(annualization)) if x.std(ddof=1) > 0 else float("nan")
     equity = (1 + x).cumprod()
-    drawdown = equity / equity.cummax() - 1
+    # Original invested capital is also a peak; an initial loss must count.
+    drawdown = equity / equity.cummax().clip(lower=1.0) - 1
     var, es = historical_var_es(x)
     return {"total_return": float(equity.iloc[-1] - 1),
             "annualized_return": annual_return, "annualized_vol": vol,

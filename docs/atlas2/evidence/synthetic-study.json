@@ -1,0 +1,9 @@
+{
+  "id": "synthetic-study",
+  "command": ".venv/bin/python -m atlas.real_study --input-csv examples/synthetic_3etf.csv --synthetic-fixture --repetitions 100 --output results/stage0_synthetic",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T21:15:40.434681+00:00",
+  "duration_seconds": 1.878,
+  "exit_code": 0,
+  "log": "synthetic-study.log"
+}

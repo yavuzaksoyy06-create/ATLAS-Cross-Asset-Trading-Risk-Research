@@ -154,6 +154,8 @@ def historical_backtest(prices: pd.DataFrame, strategy: str, cost: float = TRADI
     """
     if list(prices.columns) != list(SYMBOLS):
         raise ValueError(f'Expected columns {SYMBOLS}')
+    from .data import validate_prices
+    prices = validate_prices(prices)
     if not 0 <= cost < 1 or rebalance < 1 or len(prices) < 65:
         raise ValueError('Bad cost, rebalance frequency or observation count')
     r = prices.pct_change(fill_method=None).fillna(0).to_numpy()

@@ -6,15 +6,17 @@ import pandas as pd
 TICKERS = ["SPY", "QQQ", "IWM", "EEM", "TLT", "IEF", "GLD", "UUP", "HYG", "BIL"]
 
 
-def validate_prices(prices: pd.DataFrame) -> pd.DataFrame:
+def validate_prices(prices: pd.DataFrame, *, minimum_assets: int = 2) -> pd.DataFrame:
     """Normalize and validate wide adjusted-close price matrices.
 
     Missing rows are intentionally NOT forward-filled: that can hide stale prices.
     """
     if not isinstance(prices.index, pd.DatetimeIndex):
         raise ValueError("Index must be a DatetimeIndex.")
-    if prices.empty or prices.shape[1] < 2:
-        raise ValueError("At least two assets and one observation are required.")
+    if not isinstance(minimum_assets, int) or minimum_assets < 1:
+        raise ValueError("minimum_assets must be a positive integer.")
+    if prices.empty or prices.shape[1] < minimum_assets:
+        raise ValueError(f"At least {minimum_assets} assets and one observation are required.")
     if prices.index.has_duplicates or not prices.index.is_monotonic_increasing:
         raise ValueError("Dates must be unique and sorted ascending.")
     if prices.columns.duplicated().any():

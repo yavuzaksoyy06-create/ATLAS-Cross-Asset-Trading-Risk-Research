@@ -2,6 +2,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 import math
+import numpy as np
 import pandas as pd
 from .risk import historical_var_es, stress_portfolio
 
@@ -32,6 +33,19 @@ def simulate_rfq(weights: pd.Series, returns: pd.DataFrame, latest_mid: float,
     """
     if side not in {"buy", "sell"} or ticker == "BIL" or ticker not in weights:
         raise ValueError("Choose 'buy'/'sell' on a supported non-BIL asset.")
+    if (not all(math.isfinite(v) for v in
+                (latest_mid, notional_usd, nav_usd, assumed_adv_usd, spread_bps))
+            or spread_bps < 0):
+        raise ValueError("Quote inputs must be finite; spread must be nonnegative.")
+    if weights.index.has_duplicates or not np.isfinite(weights.to_numpy(dtype=float)).all():
+        raise ValueError("Unique assets and finite portfolio weights required.")
+    if (not isinstance(returns.index, pd.DatetimeIndex) or returns.index.hasnans
+            or returns.index.has_duplicates or not returns.index.is_monotonic_increasing
+            or returns.columns.has_duplicates or len(returns) < 30
+            or not weights.index.isin(returns.columns).all()
+            or not np.isfinite(returns.to_numpy(dtype=float)).all()
+            or (returns <= -1).any().any()):
+        raise ValueError("30+ complete, finite, date-sorted returns for every holding required.")
     if "BIL" not in weights or nav_usd <= 0 or notional_usd <= 0 or assumed_adv_usd <= 0 or latest_mid <= 0:
         raise ValueError("Positive monetary inputs and BIL funding proxy required.")
     if not 0 < notional_usd / nav_usd <= 1:
@@ -50,6 +64,8 @@ def simulate_rfq(weights: pd.Series, returns: pd.DataFrame, latest_mid: float,
     # educational coefficients/ADV assumption; NOT a real execution model.
     markup = spread_bps/2 + 0.10 * sigma * 10_000 + 20 * math.sqrt(notional_usd/assumed_adv_usd)
     quote = latest_mid * (1 + markup/10_000 if side == "buy" else 1 - markup/10_000)
+    if not math.isfinite(quote) or quote <= 0:
+        raise ValueError("Assumptions produce an invalid hypothetical quote.")
     before_returns = returns[weights.index] @ weights
     after_returns = returns[after.index] @ after
     before_var, _ = historical_var_es(before_returns)

@@ -337,6 +337,6 @@ Secure licensed price/total-return history, perform vendor reconciliation, freez
         fig.write_html(str(out/'research_dashboard.html'),include_plotlyjs=True,full_html=True)
 
     digest = {file.name: hashlib.sha256(file.read_bytes()).hexdigest()
-              for file in out.iterdir() if file.is_file()}
+              for file in out.iterdir() if file.is_file() and file.name != 'OUTPUT_SHA256.json'}
     (out / 'OUTPUT_SHA256.json').write_text(json.dumps(digest,indent=2,sort_keys=True),encoding='utf-8')
     return digest

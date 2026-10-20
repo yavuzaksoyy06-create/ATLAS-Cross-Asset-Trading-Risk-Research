@@ -1,0 +1,9 @@
+$ env PYTHONPATH=/workspace/scratch/6c2fec220aaf/work/ATLAS/results/stage0_wheel_installed .venv/bin/python -m atlas.real_study --classic-only --output results/stage0_wheel_historical
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/6c2fec220aaf/work/ATLAS/results/stage0_wheel_installed/atlas/real_study.py", line 342, in <module>
+    main()
+  File "/workspace/scratch/6c2fec220aaf/work/ATLAS/results/stage0_wheel_installed/atlas/real_study.py", line 326, in main
+    raise FileNotFoundError('Pinned archive reconciliation file is missing: ' + str(reference))
+FileNotFoundError: Pinned archive reconciliation file is missing: /workspace/scratch/6c2fec220aaf/work/ATLAS/results/research/real_market_2018_2025/REFERENCE_RESULTS.json

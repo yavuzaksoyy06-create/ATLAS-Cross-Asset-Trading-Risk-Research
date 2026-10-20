@@ -26,9 +26,10 @@ def exception_tests(exceptions: pd.Series | np.ndarray, confidence: float = .99)
 
     Small sample / rare-event p-values can be misleading; report counts too.
     """
-    x = np.asarray(exceptions, dtype=int)
-    if len(x) < 30 or np.any((x != 0) & (x != 1)) or not 0 < confidence < 1:
+    x = np.asarray(exceptions)
+    if x.ndim != 1 or len(x) < 30 or np.any((x != 0) & (x != 1)) or not 0 < confidence < 1:
         raise ValueError('30+ binary exceptions and valid confidence required')
+    x = x.astype(int)
     n, k = len(x), int(x.sum())
     p0 = 1 - confidence
     ll_null = k * np.log(p0) + (n - k) * np.log1p(-p0)

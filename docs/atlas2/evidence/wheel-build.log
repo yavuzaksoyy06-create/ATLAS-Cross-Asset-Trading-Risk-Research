@@ -1,0 +1,17 @@
+$ .venv/bin/python -m pip wheel . --no-deps --wheel-dir results/stage0_wheel
+Processing /workspace/scratch/6c2fec220aaf/work/ATLAS
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: atlas-trading-desk
+  Building wheel for atlas-trading-desk (pyproject.toml): started
+  Building wheel for atlas-trading-desk (pyproject.toml): finished with status 'done'
+  Created wheel for atlas-trading-desk: filename=atlas_trading_desk-1.2.0-py3-none-any.whl size=47844 sha256=d92a7619192918aabdafe825d0b363f4c4dcd1e953994e8c59570c9acfdfcd3c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-o_i4kwic/wheels/9d/aa/9e/c8cfca9d71bb9b4483cfba42725392d354f71a1fad4351314c
+Successfully built atlas-trading-desk
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

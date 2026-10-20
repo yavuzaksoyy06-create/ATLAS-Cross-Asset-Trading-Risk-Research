@@ -1,0 +1,9 @@
+{
+  "id": "pip-check",
+  "command": ".venv/bin/python -m pip check",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:45:28.081313+00:00",
+  "duration_seconds": 1.039,
+  "exit_code": 0,
+  "log": "pip-check.log"
+}

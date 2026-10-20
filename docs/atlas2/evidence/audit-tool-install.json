@@ -1,0 +1,9 @@
+{
+  "id": "audit-tool-install",
+  "command": ".venv/bin/python -m pip install coverage",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:44:14.976449+00:00",
+  "duration_seconds": 18.527,
+  "exit_code": 0,
+  "log": "audit-tool-install.log"
+}

@@ -1,0 +1,7 @@
+$ .venv/bin/python -m atlas.real_study --input-csv examples/synthetic_3etf.csv --synthetic-fixture --repetitions 100 --output results/stage0_synthetic
+Price observations: 925, 2020-01-01–2023-07-18
+SPY post-2023 segment CAGR (NO COST): 46.61%
+Published independent costed SPY comparator, event windows, 99% VaR coverage and uncertainty.
+SOURCE CATEGORY: SYNTHETIC ENGINEERING FIXTURE — NOT MARKET OBSERVATIONS
+RESEARCH LIMIT: Reviewed 2023–25 segment is NOT an untouched independent holdout.
+Outputs: results/stage0_synthetic

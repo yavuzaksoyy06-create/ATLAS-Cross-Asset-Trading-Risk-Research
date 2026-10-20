@@ -19,7 +19,8 @@ METRICS = ('cumulative_return_pct', 'annualized_return_pct',
 def check_reference(summary: dict, source: dict, reference_path: str | Path,
                     tolerance_percentage_points: float = 0.05) -> dict:
     """Fail closed if real-data replication diverges from independent historical snapshot."""
-    if tolerance_percentage_points <= 0 or tolerance_percentage_points > 0.5:
+    if (not math.isfinite(tolerance_percentage_points)
+            or tolerance_percentage_points <= 0 or tolerance_percentage_points > 0.5):
         raise ValueError('Comparison tolerance must be in (0, 0.5] percentage points')
     if source.get('data_category') != 'HISTORICAL_ARCHIVED_ETF_CLOSES_NOT_SYNTHETIC':
         raise ValueError('Independent historical comparison requires the verified pinned downloader')
@@ -45,7 +46,8 @@ def check_reference(summary: dict, source: dict, reference_path: str | Path,
                 raise ValueError(f'Session mismatch {strategy}/{period}')
             for key in METRICS:
                 computed = float(summary[strategy][period][key]); expected = float(periods[period][key])
-                if not math.isfinite(computed) or abs(computed - expected) > tolerance_percentage_points:
+                if (not math.isfinite(computed) or not math.isfinite(expected)
+                        or abs(computed - expected) > tolerance_percentage_points):
                     raise ValueError(f'Reference discrepancy {strategy}/{period}/{key}: {computed} vs {expected}')
                 differences[f'{strategy}/{period}/{key}'] = round(computed - expected, 8)
     return {'status':'PASSED_REFERENCE_NUMERICAL_RECONCILIATION',

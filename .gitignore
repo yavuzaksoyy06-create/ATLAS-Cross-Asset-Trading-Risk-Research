@@ -15,3 +15,9 @@ examples/synthetic_3etf.csv
 market_data/
 raw_data/
 .pip-cache/
+
+# Local packaging and coverage output; audit summaries are committed separately.
+build/
+dist/
+.coverage
+htmlcov/

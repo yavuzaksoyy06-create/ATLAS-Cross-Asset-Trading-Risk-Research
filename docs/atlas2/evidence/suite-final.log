@@ -1,0 +1,3 @@
+$ .venv/bin/python -m coverage run --branch --source=src/atlas -m pytest -ra
+....................................................................     [100%]
+68 passed in 15.11s

@@ -1,0 +1,9 @@
+{
+  "id": "suite-final-followup",
+  "command": ".venv/bin/python -m coverage run --branch --source=src/atlas -m pytest -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-20T10:30:41.134348+00:00",
+  "duration_seconds": 26.944,
+  "exit_code": 0,
+  "log": "suite-final-followup.log"
+}

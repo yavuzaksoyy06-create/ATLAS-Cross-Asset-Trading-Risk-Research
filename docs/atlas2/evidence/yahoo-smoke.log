@@ -1,0 +1,2 @@
+$ .venv/bin/python -c 'from atlas.data import yahoo_prices; p = yahoo_prices(["SPY", "QQQ"], start="2025-01-02", end="2025-01-16"); print("Source: Yahoo research feed, adjustments unverified", p.shape, p.index.min(), p.index.max()); assert not p.empty'
+Source: Yahoo research feed, adjustments unverified (9, 2) 2025-01-02 00:00:00 2025-01-15 00:00:00

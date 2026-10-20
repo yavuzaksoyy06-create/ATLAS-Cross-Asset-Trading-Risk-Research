@@ -1,0 +1,9 @@
+{
+  "id": "baseline-window-check",
+  "command": ".venv/bin/python -m pytest /workspace/scratch/6c2fec220aaf/atlas-stage0-baseline/tests/test_stage0_regressions.py::test_risk_gate_rejects_missing_returns -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T21:16:21.928954+00:00",
+  "duration_seconds": 1.407,
+  "exit_code": 1,
+  "log": "baseline-window-check.log"
+}

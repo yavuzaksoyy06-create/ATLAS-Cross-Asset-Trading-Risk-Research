@@ -1,0 +1,9 @@
+{
+  "id": "baseline-tests",
+  "command": ".venv/bin/python -m pytest -ra",
+  "cwd": "repository root",
+  "started_utc": "2026-10-19T15:42:31.511846+00:00",
+  "duration_seconds": 1.178,
+  "exit_code": 2,
+  "log": "baseline-tests.log"
+}

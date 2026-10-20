@@ -1,0 +1,13 @@
+{
+  "comparison": "unmodified baseline vs final Stage 0 source after single-asset compatibility correction",
+  "byte_identical": {
+    "result.json": true,
+    "derived_daily_returns.csv": true,
+    "reference_reconciliation.json": true,
+    "institutional/performance_summary.csv": true,
+    "institutional/historical_stress_windows.csv": true,
+    "institutional/cost_sensitivity.csv": true,
+    "institutional/risk_model_diagnostics.csv": true,
+    "institutional/uncertainty_intervals.csv": true
+  }
+}

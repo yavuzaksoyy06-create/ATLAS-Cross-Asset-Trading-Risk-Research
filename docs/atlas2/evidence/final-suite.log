@@ -1,0 +1,408 @@
+$ .venv/bin/python -m coverage run --branch --source=src/atlas,app.py -m pytest -ra
+2026-10-20 00:15:24.320 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.321 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run /workspace/scratch/6c2fec220aaf/work/ATLAS/.venv/lib/python3.12/site-packages/coverage/__main__.py [ARGUMENTS]
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.374 Session state does not function when running a script without `streamlit run`
+2026-10-20 00:15:24.374 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.375 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.376 No runtime found, using MemoryCacheStorageManager
+2026-10-20 00:15:24.376 No runtime found, using MemoryCacheStorageManager
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.687 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.688 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.697 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.700 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.700 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.700 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.700 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.700 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.702 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.704 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.734 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.734 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.736 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.736 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.736 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.736 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.737 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.737 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.737 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.738 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.738 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.741 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.742 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.742 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.744 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.745 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.748 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.749 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-20 00:15:24.749 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.751 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.754 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-20 00:15:24.755 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+==================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_atlas.py _____________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_atlas.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_atlas.py:1: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+_____________ ERROR collecting tests/test_institutional_report.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_institutional_report.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_institutional_report.py:3: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+____________________ ERROR collecting tests/test_phase2.py _____________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_phase2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_phase2.py:3: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+_____________ ERROR collecting tests/test_pinned_local_archive.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_pinned_local_archive.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_pinned_local_archive.py:4: in <module>
+    from atlas.real_study import read_pinned_market_data, blob_sha1, GIT_BLOBS, archive_url
+src/atlas/real_study.py:23: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+__________________ ERROR collecting tests/test_real_study.py ___________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_real_study.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_real_study.py:3: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+_____________ ERROR collecting tests/test_reference_validation.py ______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_reference_validation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_reference_validation.py:5: in <module>
+    from atlas.reference_validation import check_reference
+src/atlas/reference_validation.py:11: in <module>
+    from .real_study import ARCHIVE_COMMIT, GIT_BLOBS, SYMBOLS
+src/atlas/real_study.py:23: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+_______________ ERROR collecting tests/test_source_integrity.py ________________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_source_integrity.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_source_integrity.py:3: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+______________ ERROR collecting tests/test_stage0_regressions.py _______________
+ImportError while importing test module '/workspace/scratch/6c2fec220aaf/work/ATLAS/tests/test_stage0_regressions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_stage0_regressions.py:5: in <module>
+    import numpy as np
+.venv/lib/python3.12/site-packages/numpy/__init__.py:109: in <module>
+    from numpy.__config__ import show_config
+.venv/lib/python3.12/site-packages/numpy/__config__.py:4: in <module>
+    from numpy._core._multiarray_umath import (
+.venv/lib/python3.12/site-packages/numpy/_core/__init__.py:24: in <module>
+    from . import multiarray
+.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:11: in <module>
+    from . import _multiarray_umath, overrides
+E   ImportError: cannot load module more than once per process
+=========================== short test summary info ============================
+ERROR tests/test_atlas.py
+ERROR tests/test_institutional_report.py
+ERROR tests/test_phase2.py
+ERROR tests/test_pinned_local_archive.py
+ERROR tests/test_real_study.py
+ERROR tests/test_reference_validation.py
+ERROR tests/test_source_integrity.py
+ERROR tests/test_stage0_regressions.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 8 errors during collection !!!!!!!!!!!!!!!!!!!!
+8 errors in 1.03s
+/workspace/scratch/6c2fec220aaf/work/ATLAS/.venv/lib/python3.12/site-packages/coverage/inorout.py:558: CoverageWarning: Module app.py was never imported. (module-not-imported); see https://coverage.readthedocs.io/en/7.16.2/messages.html#warning-module-not-imported
+  self.warn(f"Module {pkg} was never imported.", slug="module-not-imported")
