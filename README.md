@@ -66,7 +66,7 @@ The table below separates the existing codebase from the longer-term product con
 | Trade Autopsy, Decision Twin and Personal Edge Map | **Planned differentiators** | Need contemporaneous trade evidence, honest counterfactual models and validation |
 | AI research assistant and broker integrations | **Future exploration** | No AI trading authorization, broker credentials, live trading or paid infrastructure |
 
-**Development status:** The ATLAS 2.0 [Stage 0 engineering audit](docs/atlas2/STAGE_0_AUDIT.md) is complete **on a separate review branch** ([PR #1](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/pull/1)), with additional regression fixes and **69 locally passing tests** on Python 3.12. That work has **not** been merged into \`main\` at the time of this README update. Stage 1 product/competitor research has been initiated, but no completed new trading product feature is claimed.
+**Development status:** The ATLAS 2.0 [Stage 0 engineering audit](docs/atlas2/STAGE_0_AUDIT.md) is complete **on a separate review branch** ([PR #1](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/pull/1)), with additional regression fixes and **69 locally passing tests** on Python 3.12. That work has **not** been merged into `main` at the time of this README update. Stage 1 product/competitor research has been initiated, but no completed new trading product feature is claimed.
 
 ## Verified research evidence
 
@@ -180,7 +180,7 @@ python -m pytest -q
 streamlit run app.py
 ~~~
 
-On **Windows**, replace the activation line with \`.venv\Scripts\activate\`.
+On **Windows**, replace the activation line with `.venv\Scripts\activate`.
 
 The default Streamlit experience uses a **clearly labeled synthetic engineering demonstration**, not the archived historical research data or a real-time broker account.
 
