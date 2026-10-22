@@ -1,150 +1,237 @@
 <div align="center">
 
 # ATLAS
-### Cross-Asset Trading & Risk Intelligence
+### Quantitative Trading & Decision Intelligence
 
-**Research the trade. Quantify the downside. Challenge the risk model.**
+**Research the market. Test the strategy. Understand every decision.**
 
-A reproducible Python research platform that connects **portfolio construction, cost-aware backtesting, historical stress analysis, Value-at-Risk validation, and simulated trading-desk risk decisions**.
+An evolving quantitative trading research platform connecting **portfolio analytics, cost-aware strategy testing, risk validation and evidence-driven trading decisions**.
 
-[![Quant Research CI](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/tests.yml/badge.svg)](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/tests.yml)
-[![Pinned ETF Audit](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/pinned-market-audit.yml/badge.svg)](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/pinned-market-audit.yml)
-![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.13-2B6079)
-![Type](https://img.shields.io/badge/Project-Independent%20Quant%20Research-264566)
+**ATLAS v1.2 — working research core** · **ATLAS 2.0 — product vision in development**
 
-[**Empirical findings**](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md) · [**Research methodology**](docs/RESEARCH_METHODOLOGY.md) · [**Model risks**](docs/MODEL_RISK_REGISTER.md) · [**Reproduce it**](docs/REPRODUCIBILITY.md) · [**Interview brief**](docs/RECRUITER_BRIEF.md)
+[![Quant Research CI — main](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/tests.yml/badge.svg)](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/tests.yml)
+[![Pinned ETF Audit — main](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/pinned-market-audit.yml/badge.svg)](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/pinned-market-audit.yml)
+![Python versions tested in CI](https://img.shields.io/badge/CI%20Python-3.11%20%7C%203.12%20%7C%203.13-285C7A)
+![Status](https://img.shields.io/badge/Status-Research%20Prototype-405B73)
+
+[**Overview**](#overview) · [**Capabilities**](#capability-status) · [**Research results**](#verified-research-evidence) · [**Getting started**](#getting-started) · [**Roadmap**](#atlas-20-roadmap) · [**Limitations**](#research-integrity--limitations)
 
 </div>
 
-![ATLAS: historical trading and risk research highlights](docs/assets/atlas_research_snapshot.svg)
+![Historical market and risk research summary](docs/assets/atlas_research_snapshot.svg)
 
-> **What ATLAS is:** An educational, independently developed quantitative-finance engineering and research system. **What it is not:** a live trading system, a validated source of alpha, a licensed market-data product, or a platform affiliated with a financial institution. Historical prices come from a **commit-pinned third-party ETF archive; price adjustments remain independently unverified**.
+> [!IMPORTANT]
+> **Current product boundary:** ATLAS is an independent, educational **quantitative-finance research prototype**, not a broker, live trading terminal, market-data vendor, deployed trading desk or proven source of trading alpha. ATLAS 2.0 components described as **planned** below do **not** exist yet. No real-money order execution is enabled.
 
-## The question behind ATLAS
+## Overview
 
-**How should a trading or risk analyst evaluate an allocation idea when market regimes change, turnover costs matter, and the risk model itself may be wrong?**
+A backtest can appear convincing while hiding costs, regime exposure, timing mistakes or weak risk assumptions. ATLAS approaches trading as a **decision-and-evidence problem**, not merely a search for attractive equity curves.
 
-ATLAS connects the complete research chain:
+Today, the repository provides a reproducible Python workflow for:
 
-**Historical data → source-integrity checks → past-only decisions → cost-aware portfolio returns → stress windows → VaR backtests → uncertainty analysis → reproducible report.**
+**Historical ETF prices → data/provenance checks → past-only allocation rules → assumed transaction costs → risk and stress analysis → independent metric reconciliation → research reports.**
 
-Instead of selecting the best-looking backtest and stopping there, the research deliberately includes *underperformance*, failed hedges and VaR calibration problems.
+**Who it is for:** quantitative finance students, systematic trading researchers, trading-desk candidates and risk analysts who want to examine *why a portfolio or strategy behaves as it does* and *what the evidence cannot establish*.
 
-## Evidence: 2018–2025 ETF research
+**Where it is heading:** an integrated workspace for discretionary and quantitative traders, connecting market context, trade plans, execution records, research, paper simulations, risk limits and post-trade analysis—without pretending that simulated alternatives were observed outcomes.
 
-|  | Evidence |
+### The intended ATLAS difference
+
+The proposed **Trade Intelligence Engine** will distinguish four kinds of information that are often conflated:
+
+| Category | Meaning |
 |---|---|
-| Market instruments | **SPY · QQQ · TLT** (equity / Nasdaq equity / long US Treasury ETF proxies) |
-| Observations | **2,011 aligned daily closes; 2,010 return sessions** |
-| Date span | **2018-01-02 – 2025-12-31** |
-| Rules tested | **60/40 · equal thirds · 63-session inverse volatility**, compared with costed passive SPY |
-| Implementation | Long-only; rebalance every **21 sessions**; **8 bps assumed one-way turnover cost** |
-| Audit | [GitHub Actions successful historical run](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600), **48 numerically reconciled metrics** |
+| **Observed** | What the market or trader actually recorded, with source and timestamp |
+| **Planned** | The trader's contemporaneous strategy, order or risk rule |
+| **Simulated** | What a *model* suggests might happen under explicit alternative assumptions |
+| **Unknown** | What available data cannot reliably reconstruct or establish |
 
-### 2023–2025: lower drawdown did not mean higher return
+Future features such as **Trade Autopsy**, **Decision Twin**, **Personal Edge Map** and **Strategy Robustness Gate** are intended to connect those four categories in one reviewable workflow. These are **research and product goals**, not implemented capabilities or a demonstrated competitive advantage.
 
-| Allocation | CAGR | Volatility | Max drawdown |
+## Capability status
+
+The table below separates the existing codebase from the longer-term product concept.
+
+| Domain | Status | Scope / important boundary |
+|---|---|---|
+| Historical ETF ingestion and reproducible snapshots | **Implemented; exercised** | Commit-pinned source files, hashes and clearly labeled synthetic datasets; upstream corporate-action adjustments and licensing not independently verified |
+| Portfolio rules and research backtesting | **Implemented; exercised** | Equal/fixed weights, inverse volatility, momentum, CVaR and heuristic regime research; **daily, long-only allocation approximations**, not a full order-based execution simulator |
+| Return, drawdown, VaR and Expected Shortfall analysis | **Implemented; exercised** | Rolling historical and Gaussian EWMA VaR, coverage checks, stress windows and reports within stated model assumptions |
+| Simulated trading-desk RFQ / pre-trade gate | **Prototype** | Illustrative assumptions and simulated limit decisions; **no actual order routing or executable order-book quotes** |
+| Machine-learning downside classifier | **Experimental** | Past-only fitting and baseline comparison; **no demonstrated predictive edge or calibrated probability guarantee** |
+| Python CLI, Streamlit research dashboard and CI | **Implemented; tested within scope** | Source checkout and research workflow; not yet an authenticated multi-user trading product |
+| Market terminal, watchlists, scanners and alerts | **Planned** | No production-ready trading terminal or real-time market feed |
+| Trade journal, fill-level portfolio ledger and broker imports | **Planned** | Historical research weights are not a reconciled execution ledger |
+| Paper trading, execution replay and market making | **Planned** | No durable paper broker, order lifecycle, depth/queue simulation or live execution |
+| Trade Autopsy, Decision Twin and Personal Edge Map | **Planned differentiators** | Need contemporaneous trade evidence, honest counterfactual models and validation |
+| AI research assistant and broker integrations | **Future exploration** | No AI trading authorization, broker credentials, live trading or paid infrastructure |
+
+**Development status:** The ATLAS 2.0 [Stage 0 engineering audit](docs/atlas2/STAGE_0_AUDIT.md) is complete **on a separate review branch** ([PR #1](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/pull/1)), with additional regression fixes and **69 locally passing tests** on Python 3.12. That work has **not** been merged into \`main\` at the time of this README update. Stage 1 product/competitor research has been initiated, but no completed new trading product feature is claimed.
+
+## Verified research evidence
+
+The existing empirical case study uses SPY, QQQ and TLT as *ETF proxies* for equity and duration exposures, not as a comprehensive tradable market universe.
+
+| Research configuration | Documented value |
+|---|---|
+| Historical window | **2018-01-02 to 2025-12-31** |
+| Aligned closes / return sessions | **2,011 / 2,010** |
+| Portfolio research rules | **60% SPY / 40% TLT**, equal thirds, 63-session inverse volatility |
+| Comparison | Cost-modeled passive SPY |
+| Rebalance frequency | Every **21 sessions** |
+| One-way turnover cost | **8 bps assumed**, not an observed historical execution |
+| Reference audit | **48 metrics reconciled** in a [successful historical GitHub Actions run](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600) |
+
+### A useful negative result: diversification was not free
+
+**Retrospectively reviewed 2023–2025 segment:**
+
+| Allocation | CAGR | Annualized volatility | Max drawdown |
 |---|---:|---:|---:|
-| **SPY, buy-and-hold with initial modeled cost** | **23.00%** | 15.34% | -18.76% |
+| Cost-modeled SPY buy-and-hold | **23.00%** | 15.34% | -18.76% |
 | 60% SPY / 40% TLT | 13.33% | **11.40%** | **-12.70%** |
-| Equal thirds (SPY / QQQ / TLT) | 18.18% | 12.98% | -14.54% |
-| 63-session inverse volatility | 16.50% | 12.34% | -13.44% |
+| Equal thirds | 18.18% | 12.98% | -14.54% |
+| Inverse volatility (63 sessions) | 16.50% | 12.34% | -13.44% |
 
-**Finding:** In this reviewed period, diversification reduced the simulated drawdown, but the tested diversified strategies underperformed passive SPY on CAGR. **The 2023–2025 segment was examined previously, and is not an untouched out-of-sample validation set.**
+These allocation comparisons model costs, but they are **not** independently validated live strategies. The 2023–2025 observations were reviewed prior to publication: **this is not an untouched out-of-sample evaluation**.
 
-### Two regimes, opposite lessons
+### Two market shocks, different hedge behavior
 
-| Historical stress replay | Costed SPY | 60/40 allocation | Interpretation |
-|---|---:|---:|---|
-| **2020 COVID liquidity shock** | -33.40% | -15.81% | Duration exposure cushioned losses |
-| **2022 inflation / duration repricing** | -23.83% | -27.13% | Duration exposure made losses worse |
+| Ex-post historical stress replay | Cost-modeled SPY | 60/40 portfolio |
+|---|---:|---:|
+| 2020 COVID/liquidity episode | -33.40% | -15.81% |
+| 2022 inflation/duration repricing | -23.83% | -27.13% |
 
-**The insight is the change in the hedge—not a claim that the allocation always works.**
+The 60/40 proxy reduced losses in the selected 2020 window but did worse in the selected 2022 window. That is an **ex-post observation**, not evidence of a future regime detector.
 
-### Risk engine: 99% VaR is a hypothesis to test
+### Challenge the risk model
 
-![Observed vs expected VaR breaches](docs/assets/atlas_var_backtest.svg)
+![99% VaR exception diagnostics](docs/assets/atlas_var_backtest.svg)
 
-Over **1,758 one-day risk forecasts**, a correctly calibrated 99% VaR model targets **about 17.6 breaches**. For SPY the **historical simulation recorded 31 breaches** and **Gaussian EWMA recorded 42**. The empirical shortfall highlights the importance of model governance and exception monitoring. These are educational diagnostics, not regulatory validation.
+Across **1,758 one-day VaR forecasts**, a nominal 99% model implies about **17.6 expected exceptions**. For SPY, the reproduced count was **31** under historical simulation and **42** under Gaussian EWMA.
 
-**[Read the complete empirical findings →](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md)**
+These counts raise calibration questions; they do **not** certify bank-regulatory model validity or future tail-risk prediction.
 
-## What is implemented
+**Go deeper:** [Full empirical findings](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md) · [Methods](docs/RESEARCH_METHODOLOGY.md) · [Model risk register](docs/MODEL_RISK_REGISTER.md).
 
-| Research / system layer | Components |
-|---|---|
-| **Data governance** | Source-commit pinning, Git blob verification, SHA256 provenance, strict separation of historical and synthetic inputs |
-| **Allocation engines** | Fixed/equal allocations, inverse volatility, momentum, CVaR and heuristic regime research |
-| **Portfolio accounting** | Historical rebalancing, capital-weight drift, cost/slippage assumptions, benchmark alignment |
-| **Downside risk** | Drawdown, historical VaR, expected shortfall, rolling 99% historical and Gaussian EWMA forecasts |
-| **Validation & inference** | Kupiec and Christoffersen coverage tests, past-only decisions, paired moving-block bootstrap, cost sensitivity |
-| **Market stress** | Ex-post historical event windows and explicitly separate hypothetical shock scenarios |
-| **Trading-desk prototype** | Illustrative quote/RFQ logic and pre-trade portfolio risk-limit gate—not actual order routing |
-| **Machine learning appendix** | Optional purged walk-forward classification, Brier-score evaluation against a naive base-rate |
-| **Engineering** | Python package and CLI, Streamlit UI, automated tests on Python 3.11/3.12/3.13, GitHub Actions research audit |
+## Architecture
 
-### Research workflow
+### Current research pipeline — implemented
 
 ~~~mermaid
 flowchart LR
-    A[Historical archive or labeled fixture] --> B[Provenance and quality gates]
-    B --> C[Past-only portfolio rules]
-    C --> D[Costs + accounting]
-    D --> E[Returns and drawdowns]
-    D --> F[VaR and tail diagnostics]
-    D --> G[Regime stress and uncertainty]
-    E --> H[Reproducible research output]
-    F --> H
-    G --> H
-    H --> I[Report and dashboard]
+    A[Historical or synthetic data] --> B[Provenance and validation]
+    B --> C[Past-only allocation research]
+    C --> D[Assumed transaction costs]
+    D --> E[Return and drawdown]
+    D --> F[VaR and stress analysis]
+    E --> G[Reference checks and reports]
+    F --> G
+    G --> H[CLI and Streamlit research UI]
 ~~~
 
-## Run ATLAS
+### ATLAS 2.0 product workflow — planned, not yet implemented
 
-**Python 3.11–3.13 recommended.** Download the code, then:
+~~~mermaid
+flowchart LR
+    M[Market context and strategy] --> P[Trade plan and risk budget]
+    P --> X[Paper execution and recorded fills]
+    X --> J[Trade journal and portfolio ledger]
+    J --> I[Trade Intelligence Engine]
+    I --> Q[Observed vs planned vs simulated vs unknown]
+    Q --> R[Evidence-backed review]
+~~~
+
+The longer-term design includes a **Market Workspace**, **Quant Research Lab**, **Risk Command**, **Paper Trading & Replay**, **Trading Journal**, and **Trade Intelligence Engine**. The research core is intended to be reused rather than rewritten merely for a visual redesign.
+
+## ATLAS 2.0 roadmap
+
+Stages are gated by code, test evidence, data rights and explicit review—not by attractive screenshots.
+
+| Stage | Intended milestone | Status |
+|---|---|---|
+| 0 | Audit, preservation, regression corrections | **Completed on review branch; PR open** |
+| 1 | Product research and foundational data/contracts review | **Research underway; no new platform release** |
+| 2 | Market workspace: charts, watchlists and source/freshness labels | Planned |
+| 3 | Timestamped trade journal and reconciled portfolio ledger | Planned |
+| 4 | Strategy development, cost-aware backtesting and execution simulation | Planned |
+| 5 | Expanded portfolio risk intelligence and limit governance | Planned |
+| 6 | Persistent paper trading and deterministic replay | Planned |
+| 7 | Trade Autopsy, feasible counterfactuals and Trade Intelligence | Planned |
+| 8 | Microstructure and market-making research | Planned |
+| 9 | Optional evidence-grounded AI research assistance | Planned |
+| 10 | End-to-end integration, security review, private beta and portfolio release | Planned |
+
+See the [ATLAS 2.0 engineering roadmap](docs/atlas2/MASTER_ROADMAP.md) for technical acceptance criteria. Individual stage priorities may change following documented competitor/user research. **Live broker execution, paid data feeds and public multi-user deployment are not authorized by this roadmap.**
+
+## Getting started
+
+Use a **source checkout** for the current application. **Python 3.11–3.13** is the tested CI range; the package metadata currently declares Python >=3.10, which is broader than the audited CI matrix.
 
 ~~~bash
+git clone https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research.git
+cd ATLAS-Cross-Asset-Trading-Risk-Research
+
 python -m venv .venv
 source .venv/bin/activate
+
 python -m pip install -e '.[all]'
 python -m pytest -q
 streamlit run app.py
 ~~~
 
-On Windows, activate the environment using **.venv\Scripts\activate**.
+On **Windows**, replace the activation line with \`.venv\Scripts\activate\`.
 
-The dashboard starts with a clearly labeled **synthetic engineering fixture**; this is for demonstration and **is not** the historical finding above.
+The default Streamlit experience uses a **clearly labeled synthetic engineering demonstration**, not the archived historical research data or a real-time broker account.
 
-### Reproduce the archived historical analysis
+### Reproduce the historical ETF study
+
+From a source checkout with network access:
 
 ~~~bash
 python -m atlas.real_study --output results/real_market --repetitions 500
 ~~~
 
-This downloads the three exact archives pinned by Git commit and verifies the file bytes before allowing historical-source claims. Raw vendor OHLCV is **not committed or redistributed**.
+This retrieves pinned third-party archived prices and checks source-byte identity and numerical results. It **does not** independently verify the original vendor's adjusted-price methodology or data rights. Raw third-party prices are not bundled or redistributed.
 
-You can also run it on GitHub: **Actions → Pinned historical ETF audit → Run workflow**. The successful [reference run](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/runs/39064709600) generated an English empirical research memo, interactive HTML dashboard, performance and stress tables, VaR coverage diagnostics, cost-sensitivity tables, bootstrap results and reproduction checksums. **Artifacts are subject to GitHub retention periods.**
+The manually triggered [Pinned historical ETF audit](https://github.com/yavuzaksoyy06-create/ATLAS-Cross-Asset-Trading-Risk-Research/actions/workflows/pinned-market-audit.yml) is also available in GitHub Actions; archived workflow artifacts can expire under GitHub retention rules.
 
-Local offline mode is documented in [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) and can validate byte-identical archived downloads. Uploaded personal CSVs and synthetic price fixtures are *never* mislabeled as audited vendor data.
+**Known packaging issue:** The Stage 0 audit found that running the historical reference study from an isolated installed **wheel** fails because a required reference JSON resource is missing from that distribution. Use the documented **source checkout** until packaging is corrected; do not describe wheel-based historical reproduction as working.
 
-## Research integrity: what the evidence does not say
+For offline archival reproduction and input-data rules, see [Reproducibility](docs/REPRODUCIBILITY.md).
 
-1. **No alpha claims.** Better realized downside outcomes in one interval do not imply predictive value, economic deployability or outperforming SPY.
-2. **No untouched holdout.** The post-2023 period had been inspected before the study was published.
-3. **Source adjustments not independently audited.** The public archive states that ETF closes account for corporate actions, but no licensed-vendor reconciliation was performed. Data rights also remain unverified.
-4. **Trading costs are assumptions.** Fixed bps do not replicate actual depth, spread, impact, funding, borrowing, taxes or real fills.
-5. **Model validation is not approval.** VaR exception tests have finite-sample limitations; no internal bank model, market-making inventory or institutional trading infrastructure is claimed.
-6. **Market proxies are not all markets.** The three ETFs include overlapping equity exposures and were selected retrospectively.
+## Research integrity & limitations
 
-## Technical documentation
+- **No proof of alpha or trade profitability.** Backtested returns are not executable profits or predictions.
+- **Reviewed evaluation window.** The illustrated 2023–2025 segment was already inspected, so retrospective findings cannot be presented as an untouched test.
+- **Unverified source adjustments and licensing.** A Git hash confirms file identity, not vendor accuracy, adjustment correctness or legal permission to redistribute.
+- **Simplified execution.** Fixed 8-bp trading costs do not capture historical bid/ask spread, market depth, impact, queue, latency, borrowing, financing, taxes or settlement.
+- **No execution ledger.** Allocation weights and illustrative RFQ quotes are not broker-recorded fills, inventory accounting or a professional trading terminal.
+- **Unproven machine-learning skill.** Existing classification research is experimental; successful code tests do not validate a forecast.
+- **Risk estimates are conditional.** VaR breaches, Gaussian assumptions, sampling limitations and selected crisis windows must be interpreted cautiously.
+- **No institutional affiliation or approval.** ATLAS is an independent research project, not built for or endorsed by a bank, brokerage or exchange.
+- **No live trading.** Paper execution, market making and broker connections shown in the roadmap are future work.
 
-- [ATLAS 2.0 Stage 0 audit, actual test evidence and development contract](docs/atlas2/STAGE_0_AUDIT.md) — preserves this historical research; future platform stages require review.
-- [Empirical evidence and interpretation](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md)
-- [Research methodology and formulas](docs/RESEARCH_METHODOLOGY.md)
-- [Source provenance and reproducibility](docs/REPRODUCIBILITY.md)
-- [Market risk and failure-mode register](docs/MODEL_RISK_REGISTER.md)
-- [Simulated trading-desk workflow](docs/TRADING_DESK_WORKFLOW.md)
-- [Recruiter-ready project brief and resume wording](docs/RECRUITER_BRIEF.md)
-- [Release notes](RELEASE_NOTES.md)
+## Documentation
 
-**Bottom line:** ATLAS is an end-to-end, transparent research demonstration for **evaluating trading decisions and risk models**, with repeatable computation and documented limitations. Independent project; not investment advice.
+| Resource | Purpose |
+|---|---|
+| [Empirical findings](research/real_market_2018_2025/EMPIRICAL_FINDINGS.md) | Historical results, interpretation and research caveats |
+| [Research methodology](docs/RESEARCH_METHODOLOGY.md) | Assumptions, calculations and statistical definitions |
+| [Model risk register](docs/MODEL_RISK_REGISTER.md) | Failure modes, data and modeling gaps |
+| [Source reproducibility](docs/REPRODUCIBILITY.md) | Archived data, commands, provenance and replication |
+| [Trading desk simulation](docs/TRADING_DESK_WORKFLOW.md) | What the illustrative RFQ/risk gate does—and does not do |
+| [Stage 0 audit](docs/atlas2/STAGE_0_AUDIT.md) | Executed test evidence, defects and release limitations on the review branch |
+| [ATLAS 2.0 roadmap](docs/atlas2/MASTER_ROADMAP.md) | Proposed staged product architecture and acceptance gates |
+| [Technical interview brief](docs/RECRUITER_BRIEF.md) | Concise explanations, defensible results and limitations |
+| [Release notes](RELEASE_NOTES.md) | Research-core release history |
+
+---
+
+<div align="center">
+
+**Built as an independent quantitative research and engineering portfolio project.**
+
+*Reproducible evidence first. Better trading decisions are a research objective—not a promised outcome.*
+
+</div>
